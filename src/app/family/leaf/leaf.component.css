@@ -24,7 +24,7 @@
   color: #fff;
 }
 
-.peson[data-relationship-strength=normal] {
+.person[data-relationship-strength=normal] {
   border-top: 5px solid #BD9B60;
 }
 
@@ -58,26 +58,6 @@
   height: 26px;
 }
 
-[data-relationshiptype=myGeneration]:after {
-  bottom: -2px;
-}
-
-[data-relationshipype=secondGeneration]:after {
-  bottom: -33px;
-}
-
-[data-relationshiptype=myGeneration] .person:not(:last-child):before,
-[data-relationshipype=secondGeneration] .person:not(:last-child):before,
-[data-relationshipype=thirdGeneration] .person:not(:last-child):before {
-  content: " ";
-  position: absolute;
-  top: -30px;
-  left: 67px;
-  width: 177px;
-  height: 2px;
-  background: #065481;
-}
-
 .rel-desc { font-size: 10px; }
 .is-deceased {
   font-size: 10px;
@@ -93,16 +73,4 @@
   height: 17px;
   align-self: center;
   background: #065481;
-}
-
-.spouse::after {
-  left: -59px;
-  content: " ";
-  position: absolute;
-  margin-top: 1.5em;
-  top: 16px;
-  width: 60px;
-  height: 1px;
-  align-self: center;
-  border-top: 3px solid #065481;
 }
