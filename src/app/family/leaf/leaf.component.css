@@ -1,5 +1,5 @@
 .person {
-  margin: 15px 30px 50px;
+  margin: 0 30px 20px;
   position: relative;
   z-index: 1;
   width: 130px;
@@ -10,7 +10,7 @@
   font-size: 12px;
   line-height: 15px;
   text-align: center;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
