@@ -1,0 +1,108 @@
+.person {
+  margin: 15px 30px 50px;
+  position: relative;
+  z-index: 1;
+  width: 130px;
+  height: 70px;
+  border: 0;
+  box-shadow: 0px 0px 4px #00000029;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  background-clip: border-box;
+}
+
+.person[data-relationship="me"] {
+  border-top: 5px solid #fff !important;
+  background: #065481;
+  color: #fff;
+}
+
+.peson[data-relationship-strength=normal] {
+  border-top: 5px solid #BD9B60;
+}
+
+.person[data-relationship-strength=strong] {
+  border-top: 5px solid #065481;
+}
+
+.person[data-relationship-strength=weak] {
+  border-top: 5px solid #6F263D;
+}
+
+[data-relationshiptype=elderGeneration]::before {
+  content: " ";
+  position: absolute;
+  top: 71px;
+  background: #065481;
+  width: 2px;
+  height: 60px;
+}
+
+[data-relationshiptype=myGeneration] {
+  position: relative;
+}
+
+[data-relationship-type=secondGeneration]:after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  background: #065481;
+  height: 26px;
+}
+
+[data-relationshiptype=myGeneration]:after {
+  bottom: -2px;
+}
+
+[data-relationshipype=secondGeneration]:after {
+  bottom: -33px;
+}
+
+[data-relationshiptype=myGeneration] .person:not(:last-child):before,
+[data-relationshipype=secondGeneration] .person:not(:last-child):before,
+[data-relationshipype=thirdGeneration] .person:not(:last-child):before {
+  content: " ";
+  position: absolute;
+  top: -30px;
+  left: 67px;
+  width: 177px;
+  height: 2px;
+  background: #065481;
+}
+
+.rel-desc { font-size: 10px; }
+.is-deceased {
+  font-size: 10px;
+  color: grey;
+}
+
+.me::after {
+  left: 50%;
+  top: 65px;
+  content: " ";
+  position: absolute;
+  width: 2px;
+  height: 17px;
+  align-self: center;
+  background: #065481;
+}
+
+.spouse::after {
+  left: -59px;
+  content: " ";
+  position: absolute;
+  margin-top: 1.5em;
+  top: 16px;
+  width: 60px;
+  height: 1px;
+  align-self: center;
+  border-top: 3px solid #065481;
+}

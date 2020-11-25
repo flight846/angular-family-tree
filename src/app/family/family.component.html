@@ -1,0 +1,28 @@
+<div class="tree mt-4">
+  <ul>
+    <ng-container *ngFor="let member of currentMembers;">
+      <li *ngIf="member.relationshipType === 'elderGeneration' && currentMembers.length > 1">
+        <app-leaf [person]="member"></app-leaf>
+        <ul *ngIf="member.children">
+          <li *ngFor="let child of member.children; let i = index">
+            <app-leaf [person]="child"></app-leaf>
+            <ul *ngIf="member.children[i].children">
+              <li *ngFor="let grandchildren of member.children[i].children; let j = index;">
+                <app-leaf [person]="grandchildren"></app-leaf>
+                <ul *ngIf="member.children[i].children[j].children">
+                  <li *ngFor="let ggchildren of member.children[i].children[j].children">
+                    <app-leaf [person]="ggchildren"></app-leaf>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li *ngIf="currentMembers.length === 1">
+        <app-leaf [person]="member"></app-leaf>
+      </li>
+    </ng-container>
+  </ul>
+</div>
+{{ currentMembers | json }}
