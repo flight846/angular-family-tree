@@ -1,5 +1,5 @@
 <div class="tree mt-4">
-  <ul>
+  <ul *ngIf="currentMembers.length">
     <ng-container *ngFor="let member of currentMembers;">
       <li *ngIf="member.relationshipType === 'elderGeneration' && currentMembers.length > 1">
         <app-leaf [person]="member"></app-leaf>
@@ -19,10 +19,12 @@
           </li>
         </ul>
       </li>
-      <li *ngIf="currentMembers.length === 1">
-        <app-leaf [person]="member"></app-leaf>
-      </li>
     </ng-container>
+  </ul>
+  <ul *ngIf="currentMembers.length === 1">
+    <li *ngFor="let member of currentMembers;">
+      <app-leaf [person]="member"></app-leaf>
+    </li>
   </ul>
 </div>
 {{ currentMembers | json }}
